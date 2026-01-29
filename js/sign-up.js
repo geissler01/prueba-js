@@ -61,6 +61,8 @@ form.addEventListener("submit", async e => {
         "role": role.value
     };
 
-    await postData("users", newUser)
+    await postData("users", newUser);
     
+    window.location.href = 'login.html'
+
 })

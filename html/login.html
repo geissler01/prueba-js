@@ -53,14 +53,6 @@
                                     <div class="invalid-feedback"> Invalid Passwork</div>
                                 </div>
 
-                                <div class="mb-3">
-                                    <label for="selecRole" class="form-label">Select Role</label>
-                                    <select class="form-select" aria-label="Default select example" id="selecRole">
-                                        <option value="1">User (default)</option>
-                                        <option value="2">Admin</option>
-                                    </select>
-                                </div>
-
                                 <div class="mb-3 form-check">
                                     <input type="checkbox" class="form-check-input" id="checkbox" required>
                                     <label class="form-check-label" for="checkbox">No soy un robot</label>
@@ -72,7 +64,7 @@
 
                         <div>
                             <label for="">Don't have an account?</label>
-                            <button class="btn btn-outline-secondary" id="signUp">sign Up</button>
+                            <button type="button" class="btn btn-outline-secondary" id="newRegister">sign Up</button>
                         </div>
                     </div>
                 </div>
@@ -81,7 +73,7 @@
         </div>
     </div>
 
-    <script src="/js/sign-in.js"></script>
+    <script type="module" src="/js/login.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
