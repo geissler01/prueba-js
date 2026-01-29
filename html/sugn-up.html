@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!--Link css-->
+    <link rel="stylesheet" href="/css/styles.css">
+
+    <!--Links bootstrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-md-6 col-sm-8 col-10" id="signUp">
+                <div class="card">
+                    <div class="text-center my-3">
+                        <i class="fa-solid fa-id-card fs-1"></i>
+                    </div>
+                    <div class="text-center">
+                        <h2>RestorApp</h2>
+                        <p>Create your account</p>
+                    </div>
+                    <div class="card-body">
+                        <form>
+                            <div class="mb-3">
+                                <label for="userName">Type your userName</label>
+                                <div class="form-floating">
+                                    <input type="text" id="userName" class="form-control" placeholder=""
+                                        required>
+                                    <label for="userName" class="form-label">Email</label>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="email">Type your email</label>
+                                <div class="form-floating">
+                                    <input type="email" id="email" class="form-control" placeholder=""
+                                        required>
+                                    <label for="email" class="form-label">Email</label>
+                                </div>
+                                <div class="invalid-feedback">Invalid email</div>
+                                <!-- Sirven como mensajes auxiliares junto al js, deben conservar este orden-->
+                                <div class="valid-feedback">Correcr email</div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="password">Type your password</label>
+                                <div class="form-floating">
+                                    <input type="password" id="password" class="form-control" placeholder=""
+                                        required>
+                                    <label for="password" class="form-label">Password</label>
+                                </div>
+                                <div class="invalid-feedback">Invalid email</div>
+                                <!-- Sirven como mensajes auxiliares junto al js, deben conservar este orden-->
+                                <div class="valid-feedback">Correcr email</div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="selecRole" class="form-label">Select Role</label>
+                                <select class="form-select" aria-label="Default select example" id="selectRole">
+                                    <option value="user">User (default)</option>
+                                    <option value="admin">Admin</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="code">Type code for admin</label>
+                                <div class="form-floating">
+                                    <input type="text" id="code" class="form-control" placeholder=">
+                                    <label for="code" class="form-label">Code</label>
+                                </div>
+                            </div>
+
+                            <button type="submit" class="btn btn-dark mt-1">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <!-- Scripts -->
+    <script src="/js/sign-up.js"></script>
+
+    <script src="https://kit.fontawesome.com/4777e550f8.js" crossorigin="anonymous"></script>
+
+</body>
+
+</html>
