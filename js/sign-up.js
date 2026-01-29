@@ -1,56 +1,12 @@
-const urlUsers = "http://localhost:3000/users";
+import { getData, postData } from "./services.js";
 
 const form = document.querySelector("form");
 
-// GET data users
-async function getUsers() {
-    const resUsers = await fetch(urlUsers);
-    return await resUsers.json()
-}
-// get data code
-async function getCodes() {
-    const resCodes = await fetch("http://localhost:3000/codes");
-    return await resCodes.json()
-}
-
-// POST data
-// async function createUser(data) {
-//     try {
-//         const resp = await fetch(urlUsers, {
-//             method: 'POST',
-//             headers: { 'Content-Type': 'application/json' },
-//             body: JSON.stringify(data),
-//     });
-//     } catch (error) {
-//         console.log("error")
-//     }
-
-// }
-// async function createUser(data) {
-//     try {
-//         const resp = await fetch(urlUsers, {
-//             method: "POST",
-//             headers: { "Content-Type": "application/json" },
-//             body: JSON.stringify(data)
-//         });
-
-//         if (!resp.ok) {
-//             throw new Error("Error al crear usuario");
-//         }
-
-//         const result = await resp.json();
-//         console.log("Usuario creado:", result);
-//     } catch (error) {
-//         console.log(error.message);
-//     }
-// }
-
-
 form.addEventListener("submit", async e => {
-    e.preventDefault()
+    e.preventDefault();
 
     const email = document.getElementById("email") // busco el correo
-    const emailValidate = await getUsers();
+    const emailValidate = await getData("users");
 
     // validacion correo
     const findEmail = emailValidate.find(em => em.email === email.value);
@@ -58,19 +14,33 @@ form.addEventListener("submit", async e => {
     if (findEmail) {
         alert("Usuario ya existe")
         email.classList.add("is-invalid");
+        email.classList.remove("is-valid")
         e.stopPropagation();
         return
     } else {
-        alert("correo validado")
+        email.classList.remove("is-invalid")
+        email.classList.add("is-valid")
     }
 
+    // validacion de role
     const role = document.getElementById("selectRole");
-    const codeImput = document.getElementById("code");
+    if (!role.value) {
+        role.classList.add("is-invalid")
+        alert("Seleccione un rol de usuario")
+        return
+    } else {
+        role.classList.remove("is-invalid")
+        const rol = document.getElementById("rol");
+        if (role.value === "admin") {
+            rol.classList.remove("d-none")
+        }
+    }
 
-    const codeValidate = await getCodes();
+    const codeImput = document.getElementById("code");
+    const codeValidate = await getData("codes");
 
     // validacion codigo
-    const findCode = codeValidate.find(code => code === codeImput.value);
+    const findCode = codeValidate.find(cod => cod.code === codeImput.value);
     console.log(findCode)
     if (role.value === "admin") {
         if (!findCode) {
@@ -78,8 +48,6 @@ form.addEventListener("submit", async e => {
             codeImput.classList.add("is-invalid");
             e.stopPropagation();
             return
-        } else {
-            alert("codigo validado")
         }
     }
 
@@ -93,23 +61,6 @@ form.addEventListener("submit", async e => {
         "role": role.value
     };
 
-
-    // await createUser(newUser)
-    console.log(await createProduct(newUser))
-    })
-
-
-    async function createProduct(newProdcut) {
-    try {
-        const res = await fetch('http://localhost:3000/users', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(newProdcut)
-        });
-        await res.json();
-    } catch (error) {
-        console.error('Error en POST:', error);
-    }
-}
+    await postData("users", newUser)
+    
+})

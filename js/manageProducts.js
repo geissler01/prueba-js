@@ -1,8 +1,5 @@
+
 // Post
-async function createProduct(newProdcut) {
-
-}
-
 async function createProduct(newProdcut) {
     try {
         const res = await fetch('http://localhost:3000/products', {

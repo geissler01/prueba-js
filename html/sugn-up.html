@@ -23,11 +23,11 @@
 <body>
 
     <div class="container">
-        <div class="row">
-            <div class="col-lg-4 col-md-6 col-sm-8 col-10" id="signUp">
+        <div class="row justify-content-center">
+            <div class="col-lg-5 col-md-6 col-sm-8 col-10" id="signUp">
                 <div class="card">
                     <div class="text-center my-3">
-                        <i class="fa-solid fa-id-card fs-1"></i>
+                        <i class="fa-solid fa-utensils fs-1 text-bg-success rounded-circle"></i>
                     </div>
                     <div class="text-center">
                         <h2>RestorApp</h2>
@@ -36,30 +36,27 @@
                     <div class="card-body">
                         <form>
                             <div class="mb-3">
-                                <label for="userName">Type your userName</label>
+                                <label for="userName">User Name</label>
                                 <div class="form-floating">
-                                    <input type="text" id="userName" class="form-control" placeholder=""
-                                        required>
-                                    <label for="userName" class="form-label">Email</label>
+                                    <input type="text" id="userName" class="form-control" placeholder="" required>
+                                    <label for="userName" class="form-label"><i class="fa-solid fa-signature"></i> Pedrito</label>
                                 </div>
                             </div>
                             <div class="mb-3">
-                                <label for="email">Type your email</label>
+                                <label for="email">Email</label>
                                 <div class="form-floating">
-                                    <input type="email" id="email" class="form-control" placeholder=""
-                                        required>
-                                    <label for="email" class="form-label">Email</label>
+                                    <input type="email" id="email" class="form-control" placeholder="" required>
+                                    <label for="email" class="form-label"><i class="fa-solid fa-at"></i> pedrito@gmail.com</label>
                                 </div>
                                 <div class="invalid-feedback">Invalid email</div>
                                 <!-- Sirven como mensajes auxiliares junto al js, deben conservar este orden-->
                                 <div class="valid-feedback">Correcr email</div>
                             </div>
                             <div class="mb-3">
-                                <label for="password">Type your password</label>
+                                <label for="password">Password</label>
                                 <div class="form-floating">
-                                    <input type="password" id="password" class="form-control" placeholder=""
-                                        required>
-                                    <label for="password" class="form-label">Password</label>
+                                    <input type="password" id="password" class="form-control" placeholder="" required>
+                                    <label for="password" class="form-label"><i class="fa-solid fa-lock"></i></label>
                                 </div>
                                 <div class="invalid-feedback">Invalid email</div>
                                 <!-- Sirven como mensajes auxiliares junto al js, deben conservar este orden-->
@@ -68,19 +65,19 @@
                             <div class="mb-3">
                                 <label for="selecRole" class="form-label">Select Role</label>
                                 <select class="form-select" aria-label="Default select example" id="selectRole">
-                                    <option value="user">User (default)</option>
+                                    <option value="">Select role</option>
+                                    <option value="user">User</option>
                                     <option value="admin">Admin</option>
                                 </select>
                             </div>
-                            <div class="mb-3">
+                            <div class="mb-3 d-none" id="rol">
                                 <label for="code">Type code for admin</label>
-                                <div class="form-floating">
-                                    <input type="text" id="code" class="form-control" placeholder=">
-                                    <label for="code" class="form-label">Code</label>
-                                </div>
+                                <input type="number" class="form-control" id="code">
+                            </div>
+                            <div class="mb-3 text-center">
+                                <button type="submit" class="btn btn-dark mt-1 form-control">Submit</button>
                             </div>
 
-                            <button type="submit" class="btn btn-dark mt-1">Submit</button>
                         </form>
                     </div>
                 </div>
@@ -91,9 +88,9 @@
 
 
     <!-- Scripts -->
-    <script src="/js/sign-up.js"></script>
+    <script type="module" src="/js/sign-up.js""></script>
 
-    <script src="https://kit.fontawesome.com/4777e550f8.js" crossorigin="anonymous"></script>
+    <script src=" https://kit.fontawesome.com/4777e550f8.js" crossorigin="anonymous"></script>
 
 </body>
 

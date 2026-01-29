@@ -1,34 +1,68 @@
 {
     "users": [
         {
-            "id":"1",
+            "id": "1",
             "user": "Geisler",
             "email": "gei@gmail.com",
             "password": "123",
             "role": "admin"
         },
         {
-            "id":"2",
+            "id": "2",
             "user": "Jose",
             "email": "jose@gmail.com",
             "password": "123",
             "role": "user"
+        },
+        {
+            "id": "7fe4",
+            "user": "Andres",
+            "email": "an@g",
+            "password": "fokfdlfd",
+            "role": "admin"
+        },
+        {
+            "id": "2f07",
+            "user": "Pedro",
+            "email": "pe@g",
+            "password": "kflsdmfd",
+            "role": "user"
+        },
+        {
+            "id": "e64a",
+            "user": "Maria",
+            "email": "ma@g",
+            "password": "jidjgnmd",
+            "role": "admin"
+        },
+        {
+            "id": "d21c",
+            "user": "Laura",
+            "email": "la@g",
+            "password": "jfksmdf",
+            "role": "admin"
         }
     ],
     "products": [
         {
             "name": "Hola",
             "email": "geisler@gmail.com",
-            "id": 1
+            "id": "1"
         },
         {
             "name": "Hola",
             "email": "geisler@gmail.com",
-            "id": 2
+            "id": "2"
         }
     ],
     "codes": [
-        "111",
-        "222"
+        {
+            "id": "1",
+            "code": "1111"
+        },
+        {
+            "id": "2",
+            "code": "2222"
+        }
     ]
 }
